@@ -2,18 +2,18 @@ require("dotenv").config();
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const router3bus = require("./routes/bus");
-const router4 = require("./routes/faq");
+const router3bus = require("../routes/bus");
+const router4 = require("../routes/faq");
 const app = express();
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 5000;
 const swaggerUi = require("swagger-ui-express");
 const swaggerJsdoc = require("swagger-jsdoc");
-const router = require("./routes/app");
-const router2 = require("./routes/bot");
-const router5 = require("./routes/helpneed");
-const ticketrouter = require("./routes/ticket");
-const { connection } = require("./connection");
+const router = require("../routes/app");
+const router2 = require("../routes/bot");
+const router5 = require("../routes/helpneed");
+const ticketrouter = require("../routes/ticket");
+const { connection } = require("../connection");
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views/partials"));
 app.use(bodyParser.json());
@@ -40,7 +40,7 @@ const options = {
     },
     servers: [
       {
-        url: `http://localhost:${PORT}`,
+        url: "/",
       },
     ],
   },
@@ -73,5 +73,9 @@ app.get("/userList", (req, res) => {
   console.log("server");
   return res.send("Hello from /user!");
 });
-// Start server
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+
+const serverless = require("serverless-http");
+// // Start server
+// app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+
+module.exports = serverless(app);

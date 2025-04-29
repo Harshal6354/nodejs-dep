@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bus Seat Layout</title>
+    <link rel="stylesheet" href="1.css" />
+  </head>
+  <body>
+    <div class="layout-wrapper">
+      <h3>17 Seats Available</h3>
+      <p>Click on seat to select/deselect</p>
+
+      <div class="legend">
+        <span class="seat available"></span> Available
+        <span class="seat female"></span> Female
+        <span class="seat booked"></span> Booked
+        <span class="seat male"></span> Male
+        <span class="seat selected"></span> Selected
+      </div>
+
+      <div class="seat-container">
+        <div class="section-title">Upper</div>
+        <div class="seats">
+          <div class="seat female">1</div>
+          <div class="seat female">2</div>
+          <div class="seat available">9</div>
+          <div class="seat booked">16</div>
+          <div class="seat booked">17</div>
+          <div class="seat male">18</div>
+        </div>
+        <div class="seats">
+          <div class="seat booked">A</div>
+          <div class="seat booked">D</div>
+          <div class="seat booked">E</div>
+        </div>
+
+        <div class="section-title">Lower</div>
+        <div class="seats">
+          <div class="seat available">3</div>
+          <div class="seat female">6</div>
+          <div class="seat available">11</div>
+          <div class="seat female">14</div>
+          <div class="seat booked">19</div>
+        </div>
+        <div class="seats">
+          <div class="seat available">B</div>
+          <div class="seat available">C</div>
+        </div>
+      </div>
+
+      <div class="boarding">
+        <h4>Select Boarding Point</h4>
+        <input type="text" placeholder="Search Boarding Point" />
+        <ul>
+          <li><input type="checkbox" /> Bhulka Bhavan School Adajan - 21:30</li>
+          <li><input type="checkbox" /> Old RTO Ring Road - 21:40</li>
+          <li><input type="checkbox" /> Udhana Darwaja Near Masjid - 21:45</li>
+        </ul>
+      </div>
+
+      <button disabled id="proceedBtn">Select seats to continue</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
