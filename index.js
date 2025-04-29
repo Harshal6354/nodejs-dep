@@ -41,12 +41,12 @@ const options = {
     },
     servers: [
       {
-        url: "/",
+        url: `/`,
       },
     ],
   },
-  apis: [path.join(__dirname, "../routes/*.js")], // fixed for vercel
-  // apis: ["./routes/*.js"], // Path to your API route files with Swagger comments
+  // apis: [path.join(__dirname, "../routes/*.js")], // fixed for vercel
+  apis: ["./routes/*.js"], // Path to your API route files with Swagger comments
 };
 
 const SwaggerSpe = swaggerJsdoc(options);
@@ -76,8 +76,8 @@ app.get("/userList", (req, res) => {
   return res.send("Hello from /user!");
 });
 
-const serverless = require("serverless-http");
+// const serverless = require("serverless-http");
 // Start server
-// app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
 
-module.exports = serverless(app);
+// module.exports = serverless(app);
